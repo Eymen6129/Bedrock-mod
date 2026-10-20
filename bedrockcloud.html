@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1220">
+<title>BedrockCloud — Hosting Paneli</title>
+<style>
+:root{--bg:#0b1220;--panel:#111c2e;--panel2:#16243a;--line:#26364d;--text:#edf4ff;--muted:#9aacc5;--green:#54e39a;--blue:#69a8ff;--red:#ff7474}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#14243a 0,#0b1220 55%);color:var(--text);font:15px system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:11px;padding:11px 14px;font-weight:700}
+.wrap{max-width:1100px;margin:auto;padding:20px 16px 50px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}.brand{display:flex;align-items:center;gap:11px;font-weight:850;font-size:20px}.logo{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#55e39b,#5b9dff);display:grid;place-items:center;color:#061321;font-size:23px}.pill{border:1px solid #28533f;color:var(--green);border-radius:99px;padding:7px 10px;font-size:12px;font-weight:750;white-space:nowrap}
+.hero{padding:25px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(120deg,rgba(32,57,85,.88),rgba(17,28,46,.95));margin-bottom:18px}.eyebrow{color:var(--green);font-size:12px;font-weight:850;letter-spacing:1.4px;text-transform:uppercase}.hero h1{font-size:clamp(26px,6vw,42px);line-height:1.1;margin:10px 0}.hero p{color:var(--muted);max-width:650px;line-height:1.6;margin:0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}.stat,.card{background:rgba(17,28,46,.94);border:1px solid var(--line);border-radius:17px;padding:17px}.stat small,.muted{color:var(--muted)}.stat strong{display:block;font-size:24px;margin-top:7px}
+.grid{display:grid;grid-template-columns:1.25fr .75fr;gap:15px}.sectionhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:13px}.sectionhead h2{font-size:18px;margin:0}.primary{background:var(--green);color:#062015}.secondary{background:#233752;color:var(--text);border:1px solid #334a68}.danger{background:#40242e;color:#ffb4bd;border:1px solid #653441}.server{border:1px solid var(--line);border-radius:14px;padding:15px;margin-top:11px;background:#0d1727}.serverline{display:flex;align-items:center;justify-content:space-between;gap:12px}.server h3{margin:0 0 5px;font-size:16px}.status{font-size:12px;color:var(--muted)}.status.on{color:var(--green)}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.smallbtn{padding:9px 11px;font-size:13px}.meter{height:7px;background:#26364d;border-radius:99px;overflow:hidden;margin-top:8px}.meter span{display:block;height:100%;width:0;background:linear-gradient(90deg,#55e39b,#69a8ff);transition:width .3s}
+label{display:block;color:var(--muted);font-size:13px;margin:12px 0 6px}input,select{width:100%;background:#0b1525;color:var(--text);border:1px solid #30415a;border-radius:10px;padding:12px;outline:none}input:focus,select:focus{border-color:var(--blue)}.fieldrow{display:grid;grid-template-columns:1fr 1fr;gap:10px}.note{border:1px solid #54482a;background:#2a2518;color:#f3dca0;border-radius:12px;padding:13px;font-size:13px;line-height:1.5;margin-top:16px}.console{font:12px ui-monospace,SFMono-Regular,monospace;white-space:pre-wrap;background:#080f1b;border:1px solid var(--line);border-radius:12px;padding:12px;min-height:105px;max-height:180px;overflow:auto;color:#b9cbe2}.foot{text-align:center;color:#70839d;font-size:12px;margin-top:24px;line-height:1.6}.hidden{display:none!important}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.stats{gap:8px}.stat{padding:12px}.stat strong{font-size:20px}.hero{padding:20px}.top{align-items:flex-start}.brand{font-size:18px}.pill{font-size:11px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><div class="logo">◇</div><div>Bedrock<span style="color:var(--green)">Cloud</span><div style="font-size:11px;color:var(--muted);font-weight:500">Minecraft hosting panel</div></div></div>
+    <div class="pill">● PANEL DEMOSU</div>
+  </header>
+  <section class="hero">
+    <div class="eyebrow">Kendi sunucu panelin</div>
+    <h1>Sunucunu yönet.<br><span style="color:var(--green)">Macera başlasın.</span></h1>
+    <p>Bedrock sunucularını tek panelden düzenlemek için ilk arayüzün. Sunucu kartları ve ayarlar bu tarayıcıda saklanır. Gerçek sunucu bağlantısı henüz kurulmadı.</p>
+  </section>
+  <section class="stats">
+    <div class="stat"><small>Sunucu sayısı</small><strong id="count">1</strong></div>
+    <div class="stat"><small>Çalışıyor görünen</small><strong id="running">0</strong></div>
+    <div class="stat"><small>Planlanan RAM</small><strong>2 GB</strong></div>
+  </section>
+  <div class="grid">
+    <section class="card">
+      <div class="sectionhead"><h2>▣ Sunucularım</h2><button class="primary" id="addBtn">+ Sunucu oluştur</button></div>
+      <div id="servers"></div>
+      <div class="note"><b>Demo uyarısı:</b> Başlat/Durdur düğmeleri şu anda yalnızca paneldeki örnek durumu değiştirir. Minecraft dünyası başlatmaz ve arkadaşların henüz bağlanamaz.</div>
+    </section>
+    <aside class="card">
+      <div class="sectionhead"><h2>⚙ Sunucu ayarları</h2></div>
+      <form id="settings">
+        <label for="name">Sunucu adı</label><input id="name" maxlength="32" value="Arkadaşların Dünyası" required>
+        <div class="fieldrow">
+          <div><label for="version">Bedrock sürümü</label><select id="version"><option>En güncel</option><option>1.21.x</option><option>1.20.x</option></select></div>
+          <div><label for="players">Oyuncu limiti</label><select id="players"><option>5</option><option selected>10</option><option>20</option><option>30</option></select></div>
+        </div>
+        <label for="mode">Oyun modu</label><select id="mode"><option>Survival</option><option>Creative</option><option>Adventure</option></select>
+        <label for="difficulty">Zorluk</label><select id="difficulty"><option>Normal</option><option>Easy</option><option>Hard</option><option>Peaceful</option></select>
+        <button class="primary" style="width:100%;margin-top:15px" type="submit">Ayarları kaydet</button>
+      </form>
+      <div style="margin-top:22px"><div class="sectionhead"><h2>⌁ Konsol örneği</h2><button class="secondary smallbtn" id="clearConsole">Temizle</button></div><div class="console" id="console">[BedrockCloud] Panel açıldı.
+[Bilgi] Bu bir arayüz demosudur.
+[Bilgi] Gerçek sunucu bağlantısı bekleniyor.</div></div>
+      <div style="margin-top:18px"><h2 style="font-size:17px">Paketler ve eklentiler</h2><p class="muted" style="font-size:13px;line-height:1.5">İleride desteklenen Bedrock eklentileri ve .mcpack/.mcaddon dosyaları için yönetim alanı eklenecek.</p><button class="secondary" id="pluginBtn" style="width:100%">Paket alanını görüntüle</button><p id="pluginMsg" class="muted hidden" style="font-size:12px">Bu demo henüz dosya yüklemiyor. Dosyalar gerçek sunucuya bağlanınca güvenli biçimde aktarılacak.</p></div>
+    </aside>
+  </div>
+  <div class="foot">BedrockCloud • İlk arayüz prototipi<br>Veriler bu cihazdaki tarayıcıda saklanır. Tarayıcı verilerini temizlersen demo ayarları silinebilir.</div>
+</div>
+<script>
+const KEY='bedrockcloud_demo_v1';
+let state;
+try { state=JSON.parse(localStorage.getItem(KEY)); } catch(e) {}
+if(!state || !Array.isArray(state.servers)) state={selected:1,servers:[{id:1,name:'Arkadaşların Dünyası',version:'En güncel',players:'10',mode:'Survival',difficulty:'Normal',running:false}]};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function log(msg){const el=document.getElementById('console');el.textContent+='\\n'+new Date().toLocaleTimeString('tr-TR')+' '+msg;el.scrollTop=el.scrollHeight;}
+function current(){return state.servers.find(s=>s.id===state.selected)||state.servers[0];}
+function render(){
+ const list=document.getElementById('servers');list.innerHTML='';
+ state.servers.forEach(s=>{
+  const d=document.createElement('div');d.className='server';
+  d.innerHTML=`<div class="serverline"><div><h3></h3><div class="status"></div></div><div style="text-align:right"><div style="font-weight:800">0 / <span class="pmax"></span></div><small class="muted">oyuncu</small></div></div><div class="meter"><span></span></div><div class="actions"><button class="smallbtn primary toggle"></button><button class="smallbtn secondary edit">Ayarları aç</button><button class="smallbtn danger delete">Sil</button></div>`;
+  d.querySelector('h3').textContent=s.name;d.querySelector('.status').textContent=s.running?'● Çalışıyor (demo)':'○ Durduruldu';if(s.running)d.querySelector('.status').classList.add('on');
+  d.querySelector('.pmax').textContent=s.players;d.querySelector('.meter span').style.width=s.running?'35%':'0%';
+  d.querySelector('.toggle').textContent=s.running?'■ Durdur':'▶ Başlat';
+  d.querySelector('.toggle').addEventListener('click',()=>{s.running=!s.running;save();render();log(s.running?'[DEMO] '+s.name+' çalışıyor olarak işaretlendi. Gerçek sunucu başlatılmadı.':'[DEMO] '+s.name+' durduruldu olarak işaretlendi.');});
+  d.querySelector('.edit').addEventListener('click',()=>{state.selected=s.id;loadSettings();renderSelection();});
+  d.querySelector('.delete').addEventListener('click',()=>{if(state.servers.length===1){alert('En az bir demo sunucusu kalmalı.');return;}if(confirm(s.name+' silinsin mi?')){state.servers=state.servers.filter(x=>x.id!==s.id);if(state.selected===s.id)state.selected=state.servers[0].id;save();render();loadSettings();log('[DEMO] Sunucu kartı silindi.');}});
+  list.appendChild(d);
+ });
+ document.getElementById('count').textContent=state.servers.length;
+ document.getElementById('running').textContent=state.servers.filter(s=>s.running).length;
+ renderSelection();
+}
+function loadSettings(){const s=current();if(!s)return;['name','version','players','mode','difficulty'].forEach(k=>document.getElementById(k).value=s[k]||document.getElementById(k).value);}
+function renderSelection(){const s=current();document.querySelectorAll('.server').forEach((el,i)=>{const item=state.servers[i];el.style.borderColor=item&&s&&item.id===s.id?'#54e39a':'#26364d';});}
+document.getElementById('addBtn').addEventListener('click',()=>{if(state.servers.length>=5){alert('Demo sürümünde en fazla 5 kart oluşturabilirsin.');return;}const id=Date.now();state.servers.push({id,name:'Yeni Bedrock Sunucusu',version:'En güncel',players:'10',mode:'Survival',difficulty:'Normal',running:false});state.selected=id;save();render();loadSettings();log('[DEMO] Yeni sunucu kartı oluşturuldu.');});
+document.getElementById('settings').addEventListener('submit',e=>{e.preventDefault();const s=current();if(!s)return;['name','version','players','mode','difficulty'].forEach(k=>s[k]=document.getElementById(k).value);save();render();loadSettings();log('[DEMO] Ayarlar bu tarayıcıya kaydedildi.');});
+document.getElementById('clearConsole').addEventListener('click',()=>document.getElementById('console').textContent='[BedrockCloud] Konsol temizlendi.');
+document.getElementById('pluginBtn').addEventListener('click',()=>document.getElementById('pluginMsg').classList.toggle('hidden'));
+render();loadSettings();
+</script>
+</body>
+</html>
