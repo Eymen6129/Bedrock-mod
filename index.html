@@ -2,95 +2,56 @@
 <html lang="tr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0b1220">
-<title>BedrockCloud — Hosting Paneli</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#090e18">
+<title>Studio Lite 2.0 — Mobil Roblox Editörü</title>
 <style>
-:root{--bg:#0b1220;--panel:#111c2e;--panel2:#16243a;--line:#26364d;--text:#edf4ff;--muted:#9aacc5;--green:#54e39a;--blue:#69a8ff;--red:#ff7474}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#14243a 0,#0b1220 55%);color:var(--text);font:15px system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:11px;padding:11px 14px;font-weight:700}
-.wrap{max-width:1100px;margin:auto;padding:20px 16px 50px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}.brand{display:flex;align-items:center;gap:11px;font-weight:850;font-size:20px}.logo{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#55e39b,#5b9dff);display:grid;place-items:center;color:#061321;font-size:23px}.pill{border:1px solid #28533f;color:var(--green);border-radius:99px;padding:7px 10px;font-size:12px;font-weight:750;white-space:nowrap}
-.hero{padding:25px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(120deg,rgba(32,57,85,.88),rgba(17,28,46,.95));margin-bottom:18px}.eyebrow{color:var(--green);font-size:12px;font-weight:850;letter-spacing:1.4px;text-transform:uppercase}.hero h1{font-size:clamp(26px,6vw,42px);line-height:1.1;margin:10px 0}.hero p{color:var(--muted);max-width:650px;line-height:1.6;margin:0}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}.stat,.card{background:rgba(17,28,46,.94);border:1px solid var(--line);border-radius:17px;padding:17px}.stat small,.muted{color:var(--muted)}.stat strong{display:block;font-size:24px;margin-top:7px}
-.grid{display:grid;grid-template-columns:1.25fr .75fr;gap:15px}.sectionhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:13px}.sectionhead h2{font-size:18px;margin:0}.primary{background:var(--green);color:#062015}.secondary{background:#233752;color:var(--text);border:1px solid #334a68}.danger{background:#40242e;color:#ffb4bd;border:1px solid #653441}.server{border:1px solid var(--line);border-radius:14px;padding:15px;margin-top:11px;background:#0d1727}.serverline{display:flex;align-items:center;justify-content:space-between;gap:12px}.server h3{margin:0 0 5px;font-size:16px}.status{font-size:12px;color:var(--muted)}.status.on{color:var(--green)}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.smallbtn{padding:9px 11px;font-size:13px}.meter{height:7px;background:#26364d;border-radius:99px;overflow:hidden;margin-top:8px}.meter span{display:block;height:100%;width:0;background:linear-gradient(90deg,#55e39b,#69a8ff);transition:width .3s}
-label{display:block;color:var(--muted);font-size:13px;margin:12px 0 6px}input,select{width:100%;background:#0b1525;color:var(--text);border:1px solid #30415a;border-radius:10px;padding:12px;outline:none}input:focus,select:focus{border-color:var(--blue)}.fieldrow{display:grid;grid-template-columns:1fr 1fr;gap:10px}.note{border:1px solid #54482a;background:#2a2518;color:#f3dca0;border-radius:12px;padding:13px;font-size:13px;line-height:1.5;margin-top:16px}.console{font:12px ui-monospace,SFMono-Regular,monospace;white-space:pre-wrap;background:#080f1b;border:1px solid var(--line);border-radius:12px;padding:12px;min-height:105px;max-height:180px;overflow:auto;color:#b9cbe2}.foot{text-align:center;color:#70839d;font-size:12px;margin-top:24px;line-height:1.6}.hidden{display:none!important}
-@media(max-width:720px){.grid{grid-template-columns:1fr}.stats{gap:8px}.stat{padding:12px}.stat strong{font-size:20px}.hero{padding:20px}.top{align-items:flex-start}.brand{font-size:18px}.pill{font-size:11px}}
+:root{color-scheme:dark;--bg:#090e18;--panel:#111a2a;--line:#283951;--text:#eef5ff;--muted:#93a6c1;--cyan:#64e5ff;--green:#69f0b2}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--text);font:14px system-ui,-apple-system,Segoe UI,Roboto,sans-serif}button,input{font:inherit}button{border:1px solid var(--line);background:#1a2940;color:var(--text);border-radius:10px;padding:9px 11px;font-weight:650;cursor:pointer;touch-action:manipulation}.primary{background:var(--cyan);color:#06121b;border-color:transparent}.active{border-color:var(--cyan)!important;color:var(--cyan)!important}.app{height:100dvh;display:flex;flex-direction:column;min-height:0}.topbar{height:56px;flex:none;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 12px;border-bottom:1px solid var(--line);background:#0c1422}.brand{display:flex;align-items:center;gap:9px;font-weight:900;font-size:15px;white-space:nowrap}.logo{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;background:linear-gradient(135deg,var(--cyan),#719bff);color:#07121c;font-size:18px}.brand small{display:block;font-size:9px;color:var(--muted);font-weight:650;letter-spacing:1px}.topactions{display:flex;gap:6px}.workspace{display:grid;grid-template-columns:190px minmax(0,1fr) 220px;flex:1;min-height:0}.side{min-height:0;overflow:auto;background:var(--panel);padding:12px;border-right:1px solid var(--line)}.right{border-right:0;border-left:1px solid var(--line)}.paneltitle{display:flex;align-items:center;justify-content:space-between;font-weight:850;margin:1px 0 12px}.hint{font-size:11px;color:var(--muted);line-height:1.5}.treeitem{width:100%;display:flex;gap:8px;text-align:left;padding:9px;margin:3px 0;background:transparent;border-color:transparent;font-size:13px}.treeitem.selected{background:#173348;border-color:#286174;color:#bdf6ff}.treeicon{color:var(--cyan)}.center{display:flex;flex-direction:column;min-width:0;min-height:0;background:#0b1220}.tools{display:flex;gap:6px;align-items:center;padding:9px;border-bottom:1px solid var(--line);overflow:auto;flex:none}.tools button{white-space:nowrap;padding:8px 10px;font-size:12px}.scene{position:relative;flex:1;min-height:180px;overflow:hidden;background:radial-gradient(ellipse at 50% 40%,#1a2d47,#0a111e 72%)}#view{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none}.sceneLabel{position:absolute;top:10px;left:10px;padding:7px 9px;border:1px solid #30425b;border-radius:9px;background:#0b1423d9;color:#c6d7ee;font-size:11px;pointer-events:none}.sceneHelp{position:absolute;bottom:10px;left:10px;right:10px;text-align:center;color:#a4b8d2;font-size:11px;text-shadow:0 1px 4px #000;pointer-events:none}.bottom{display:flex;justify-content:space-between;gap:8px;padding:8px 11px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}.bottom strong{color:var(--green)}.field{margin:12px 0}.field label{display:block;font-size:11px;color:var(--muted);margin-bottom:6px}.field input{width:100%;min-width:0;border:1px solid var(--line);background:#0b1422;color:var(--text);padding:9px;border-radius:9px;outline:none}.triple{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.triple input{padding:8px 3px;text-align:center}.colorrow{display:flex;align-items:center;gap:8px}.colorrow input{height:38px;padding:3px;width:46px}.colorrow span{font-size:12px;color:var(--muted)}.divider{height:1px;background:var(--line);margin:14px 0}.empty{padding:10px;color:var(--muted);font-size:12px;line-height:1.5}.mobiletabs{display:none}.toast{position:fixed;z-index:20;bottom:25px;left:50%;transform:translateX(-50%);background:#e5fbff;color:#06121b;padding:11px 16px;border-radius:12px;font-weight:750;box-shadow:0 8px 30px #0008;max-width:90%;text-align:center}.hidden{display:none!important}
+@media(max-width:800px){.workspace{grid-template-columns:minmax(0,1fr)}.side{display:none}.center{grid-row:1;min-height:0}.mobiletabs{display:flex;gap:6px;padding:7px;background:#0c1422;border-top:1px solid var(--line)}.mobiletabs button{flex:1;padding:9px 5px;font-size:12px}.mobiletabs button.active{color:var(--cyan);border-color:var(--cyan)}.workspace.show-explorer .center,.workspace.show-properties .center{display:none}.workspace.show-explorer .explorer,.workspace.show-properties .right{display:block}.workspace.show-explorer .right,.workspace.show-properties .explorer{display:none}.workspace.show-explorer,.workspace.show-properties{display:block}.explorer,.right{height:100%;overflow:auto;border:0}.topbar{padding:0 8px}.brand{font-size:13px}.brand small{font-size:8px}.tools{padding:7px}.tools button{padding:8px}.scene{min-height:200px}}
+@media(min-width:801px){.mobiletabs{display:none}}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header class="top">
-    <div class="brand"><div class="logo">◇</div><div>Bedrock<span style="color:var(--green)">Cloud</span><div style="font-size:11px;color:var(--muted);font-weight:500">Minecraft hosting panel</div></div></div>
-    <div class="pill">● PANEL DEMOSU</div>
-  </header>
-  <section class="hero">
-    <div class="eyebrow">Kendi sunucu panelin</div>
-    <h1>Sunucunu yönet.<br><span style="color:var(--green)">Macera başlasın.</span></h1>
-    <p>Bedrock sunucularını tek panelden düzenlemek için ilk arayüzün. Sunucu kartları ve ayarlar bu tarayıcıda saklanır. Gerçek sunucu bağlantısı henüz kurulmadı.</p>
-  </section>
-  <section class="stats">
-    <div class="stat"><small>Sunucu sayısı</small><strong id="count">1</strong></div>
-    <div class="stat"><small>Çalışıyor görünen</small><strong id="running">0</strong></div>
-    <div class="stat"><small>Planlanan RAM</small><strong>2 GB</strong></div>
-  </section>
-  <div class="grid">
-    <section class="card">
-      <div class="sectionhead"><h2>▣ Sunucularım</h2><button class="primary" id="addBtn">+ Sunucu oluştur</button></div>
-      <div id="servers"></div>
-      <div class="note"><b>Demo uyarısı:</b> Başlat/Durdur düğmeleri şu anda yalnızca paneldeki örnek durumu değiştirir. Minecraft dünyası başlatmaz ve arkadaşların henüz bağlanamaz.</div>
-    </section>
-    <aside class="card">
-      <div class="sectionhead"><h2>⚙ Sunucu ayarları</h2></div>
-      <form id="settings">
-        <label for="name">Sunucu adı</label><input id="name" maxlength="32" value="Arkadaşların Dünyası" required>
-        <div class="fieldrow">
-          <div><label for="version">Bedrock sürümü</label><select id="version"><option>En güncel</option><option>1.21.x</option><option>1.20.x</option></select></div>
-          <div><label for="players">Oyuncu limiti</label><select id="players"><option>5</option><option selected>10</option><option>20</option><option>30</option></select></div>
-        </div>
-        <label for="mode">Oyun modu</label><select id="mode"><option>Survival</option><option>Creative</option><option>Adventure</option></select>
-        <label for="difficulty">Zorluk</label><select id="difficulty"><option>Normal</option><option>Easy</option><option>Hard</option><option>Peaceful</option></select>
-        <button class="primary" style="width:100%;margin-top:15px" type="submit">Ayarları kaydet</button>
-      </form>
-      <div style="margin-top:22px"><div class="sectionhead"><h2>⌁ Konsol örneği</h2><button class="secondary smallbtn" id="clearConsole">Temizle</button></div><div class="console" id="console">[BedrockCloud] Panel açıldı.
-[Bilgi] Bu bir arayüz demosudur.
-[Bilgi] Gerçek sunucu bağlantısı bekleniyor.</div></div>
-      <div style="margin-top:18px"><h2 style="font-size:17px">Paketler ve eklentiler</h2><p class="muted" style="font-size:13px;line-height:1.5">İleride desteklenen Bedrock eklentileri ve .mcpack/.mcaddon dosyaları için yönetim alanı eklenecek.</p><button class="secondary" id="pluginBtn" style="width:100%">Paket alanını görüntüle</button><p id="pluginMsg" class="muted hidden" style="font-size:12px">Bu demo henüz dosya yüklemiyor. Dosyalar gerçek sunucuya bağlanınca güvenli biçimde aktarılacak.</p></div>
-    </aside>
-  </div>
-  <div class="foot">BedrockCloud • İlk arayüz prototipi<br>Veriler bu cihazdaki tarayıcıda saklanır. Tarayıcı verilerini temizlersen demo ayarları silinebilir.</div>
+<div class="app">
+<header class="topbar"><div class="brand"><div class="logo">✦</div><div>STUDIO LITE 2.0<small>MOBILE CREATOR • PROTOTYPE</small></div></div><div class="topactions"><button id="newBtn">＋ Yeni</button><button id="saveBtn" class="primary">Kaydet</button></div></header>
+<div class="workspace" id="workspace">
+<aside class="side explorer"><div class="paneltitle"><span>▤ Explorer</span><button id="addSide" style="padding:5px 9px">＋</button></div><div class="hint">Sahnedeki nesneler</div><div id="tree"></div><div class="divider"></div><div class="paneltitle">Nesne ekle</div><button id="addCube" style="width:100%;margin-bottom:7px">＋ Part (Küp)</button><button id="addSphere" style="width:100%;margin-bottom:7px">＋ Sphere</button><button id="addFloor" style="width:100%">＋ Zemin</button><p class="hint" style="margin-top:14px">Bu ilk prototip tarayıcıda 3D sahne düzenler. Henüz Roblox Studio motoru değildir.</p></aside>
+<main class="center"><div class="tools"><button id="selectTool" class="active">↖ Seç</button><button id="moveTool">✥ Taşı</button><button id="rotateTool">⟳ Döndür</button><button id="scaleTool">⤢ Boyut</button><button id="deleteBtn">Sil</button></div><div class="scene"><canvas id="view"></canvas><div class="sceneLabel">3D SAHNE <span style="color:var(--green)">●</span> Yerel prototip</div><div class="sceneHelp">Sürükle: kamerayı döndür • Yakınlaştırmak için iki parmak kullan</div></div><div class="bottom"><span id="status">Hazır • 0 nesne</span><span><strong>●</strong> Otomatik kayıt açık</span></div></main>
+<aside class="side right"><div class="paneltitle">⚙ Properties</div><div id="properties"><div class="empty">Düzenlemek için bir nesne seç.</div></div><div class="divider"></div><div class="paneltitle">Proje</div><div class="field"><label>Proje adı</label><input id="projectName" value="Yeni Roblox Oyunum" maxlength="50"></div><button id="exportBtn" style="width:100%">Dışa aktar (JSON)</button><p class="hint">JSON, sahne taslağını saklar; Roblox place dosyası (.rbxl) değildir.</p></aside>
 </div>
+<nav class="mobiletabs"><button id="tabScene" class="active">▦ Sahne</button><button id="tabExplorer">☷ Explorer</button><button id="tabProps">⚙ Özellikler</button></nav>
+<div id="toast" class="toast hidden"></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 <script>
-const KEY='bedrockcloud_demo_v1';
-let state;
-try { state=JSON.parse(localStorage.getItem(KEY)); } catch(e) {}
-if(!state || !Array.isArray(state.servers)) state={selected:1,servers:[{id:1,name:'Arkadaşların Dünyası',version:'En güncel',players:'10',mode:'Survival',difficulty:'Normal',running:false}]};
-function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
-function log(msg){const el=document.getElementById('console');el.textContent+='\\n'+new Date().toLocaleTimeString('tr-TR')+' '+msg;el.scrollTop=el.scrollHeight;}
-function current(){return state.servers.find(s=>s.id===state.selected)||state.servers[0];}
-function render(){
- const list=document.getElementById('servers');list.innerHTML='';
- state.servers.forEach(s=>{
-  const d=document.createElement('div');d.className='server';
-  d.innerHTML=`<div class="serverline"><div><h3></h3><div class="status"></div></div><div style="text-align:right"><div style="font-weight:800">0 / <span class="pmax"></span></div><small class="muted">oyuncu</small></div></div><div class="meter"><span></span></div><div class="actions"><button class="smallbtn primary toggle"></button><button class="smallbtn secondary edit">Ayarları aç</button><button class="smallbtn danger delete">Sil</button></div>`;
-  d.querySelector('h3').textContent=s.name;d.querySelector('.status').textContent=s.running?'● Çalışıyor (demo)':'○ Durduruldu';if(s.running)d.querySelector('.status').classList.add('on');
-  d.querySelector('.pmax').textContent=s.players;d.querySelector('.meter span').style.width=s.running?'35%':'0%';
-  d.querySelector('.toggle').textContent=s.running?'■ Durdur':'▶ Başlat';
-  d.querySelector('.toggle').addEventListener('click',()=>{s.running=!s.running;save();render();log(s.running?'[DEMO] '+s.name+' çalışıyor olarak işaretlendi. Gerçek sunucu başlatılmadı.':'[DEMO] '+s.name+' durduruldu olarak işaretlendi.');});
-  d.querySelector('.edit').addEventListener('click',()=>{state.selected=s.id;loadSettings();renderSelection();});
-  d.querySelector('.delete').addEventListener('click',()=>{if(state.servers.length===1){alert('En az bir demo sunucusu kalmalı.');return;}if(confirm(s.name+' silinsin mi?')){state.servers=state.servers.filter(x=>x.id!==s.id);if(state.selected===s.id)state.selected=state.servers[0].id;save();render();loadSettings();log('[DEMO] Sunucu kartı silindi.');}});
-  list.appendChild(d);
- });
- document.getElementById('count').textContent=state.servers.length;
- document.getElementById('running').textContent=state.servers.filter(s=>s.running).length;
- renderSelection();
-}
-function loadSettings(){const s=current();if(!s)return;['name','version','players','mode','difficulty'].forEach(k=>document.getElementById(k).value=s[k]||document.getElementById(k).value);}
-function renderSelection(){const s=current();document.querySelectorAll('.server').forEach((el,i)=>{const item=state.servers[i];el.style.borderColor=item&&s&&item.id===s.id?'#54e39a':'#26364d';});}
-document.getElementById('addBtn').addEventListener('click',()=>{if(state.servers.length>=5){alert('Demo sürümünde en fazla 5 kart oluşturabilirsin.');return;}const id=Date.now();state.servers.push({id,name:'Yeni Bedrock Sunucusu',version:'En güncel',players:'10',mode:'Survival',difficulty:'Normal',running:false});state.selected=id;save();render();loadSettings();log('[DEMO] Yeni sunucu kartı oluşturuldu.');});
-document.getElementById('settings').addEventListener('submit',e=>{e.preventDefault();const s=current();if(!s)return;['name','version','players','mode','difficulty'].forEach(k=>s[k]=document.getElementById(k).value);save();render();loadSettings();log('[DEMO] Ayarlar bu tarayıcıya kaydedildi.');});
-document.getElementById('clearConsole').addEventListener('click',()=>document.getElementById('console').textContent='[BedrockCloud] Konsol temizlendi.');
-document.getElementById('pluginBtn').addEventListener('click',()=>document.getElementById('pluginMsg').classList.toggle('hidden'));
-render();loadSettings();
+(()=>{'use strict';
+const $=id=>document.getElementById(id),KEY='studio_lite_2_mobile_v1';let objects=[],selectedId=null,nextId=1,scene,camera,renderer,raycaster,mouse,orbit={down:false,x:0,y:0,rotX:.42,rotY:.72,dist:12},touchStart=null,toastTimer;
+function notify(s){let t=$('toast');t.textContent=s;t.classList.remove('hidden');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.add('hidden'),2100)}
+function init(){if(!window.THREE){$('status').textContent='3D motoru yüklenemedi; internet bağlantısını kontrol et.';return}
+scene=new THREE.Scene();scene.background=new THREE.Color('#0b1220');camera=new THREE.PerspectiveCamera(50,1,.1,1000);renderer=new THREE.WebGLRenderer({canvas:$('view'),antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));scene.add(new THREE.HemisphereLight(0xc4e8ff,0x283247,2));let l=new THREE.DirectionalLight(0xffffff,2);l.position.set(7,12,8);scene.add(l);let g=new THREE.GridHelper(50,50,0x3c6682,0x24364c);g.position.y=-.51;scene.add(g);scene.add(new THREE.AxesHelper(2));raycaster=new THREE.Raycaster();mouse=new THREE.Vector2();resize();window.addEventListener('resize',resize);$('view').addEventListener('pointerdown',down);$('view').addEventListener('pointermove',move);$('view').addEventListener('pointerup',up);$('view').addEventListener('pointercancel',up);$('view').addEventListener('wheel',e=>{orbit.dist=Math.max(3,Math.min(40,orbit.dist+e.deltaY*.012));cam()},{passive:true});frame()}
+function resize(){if(!renderer)return;let r=$('view').getBoundingClientRect();if(!r.width||!r.height)return;renderer.setSize(r.width,r.height,false);camera.aspect=r.width/r.height;camera.updateProjectionMatrix();cam()}
+function cam(){if(camera){camera.position.set(orbit.dist*Math.sin(orbit.rotY)*Math.cos(orbit.rotX),orbit.dist*Math.sin(orbit.rotX),orbit.dist*Math.cos(orbit.rotY)*Math.cos(orbit.rotX));camera.lookAt(0,0,0)}}
+function frame(){requestAnimationFrame(frame);if(renderer)renderer.render(scene,camera)}
+function make(type,name,pos=[0,.5,0],color='#4ea8de',size=[2,1,2],id){if(!scene)return;let geo=type==='Sphere'?new THREE.SphereGeometry(.5,24,16):new THREE.BoxGeometry(1,1,1),mat=new THREE.MeshStandardMaterial({color,roughness:.62,metalness:.12}),mesh=new THREE.Mesh(geo,mat);mesh.position.set(...pos);mesh.scale.set(...size);mesh.userData.objectId=id||nextId++;scene.add(mesh);let o={id:mesh.userData.objectId,name,type,position:mesh.position.toArray(),rotation:[0,0,0],size:mesh.scale.toArray(),color,mesh};objects.push(o);selectedId=o.id;sync();persist();return o}
+function chosen(){return objects.find(o=>o.id===selectedId)}
+function sync(){tree();props();$('status').textContent='Hazır • '+objects.length+' nesne'}
+function tree(){let t=$('tree');t.innerHTML='';if(!objects.length){t.innerHTML='<div class="empty">Sahne boş. Part ekleyerek başla.</div>';return}objects.slice().reverse().forEach(o=>{let b=document.createElement('button');b.className='treeitem'+(o.id===selectedId?' selected':'');let i=document.createElement('span');i.className='treeicon';i.textContent='◆';let n=document.createElement('span');n.textContent=o.name;b.append(i,n);b.onclick=()=>{selectedId=o.id;sync()};t.appendChild(b)})}
+function vec(label,key,values){return '<div class="field"><label>'+label+'</label><div class="triple">'+values.map((v,i)=>'<input type="number" step="0.1" data-key="'+key+'" data-i="'+i+'" value="'+Number(key==='rotation'?v*180/Math.PI:v).toFixed(1)+'">').join('')+'</div></div>'}
+function props(){let p=$('properties'),o=chosen();if(!o){p.innerHTML='<div class="empty">Düzenlemek için Explorer veya sahneden bir nesne seç.</div>';return}p.innerHTML='<div class="field"><label>Nesne adı</label><input id="objName" maxlength="40"></div>'+vec('Konum (X / Y / Z)','position',o.position)+vec('Boyut (X / Y / Z)','size',o.size)+vec('Dönüş (derece)','rotation',o.rotation)+'<div class="field"><label>Renk</label><div class="colorrow"><input type="color" id="objColor"><span>Parça rengi</span></div></div>'; $('objName').value=o.name;$('objColor').value=o.color;$('objName').onchange=e=>{o.name=e.target.value.trim()||'Part';sync();persist()};$('objColor').oninput=e=>{o.color=e.target.value;o.mesh.material.color.set(o.color);persist()};p.querySelectorAll('[data-key]').forEach(el=>el.onchange=()=>{let k=el.dataset.key,i=+el.dataset.i,v=+el.value;if(!Number.isFinite(v))return;o[k][i]=k==='rotation'?v*Math.PI/180:v;if(k==='position')o.mesh.position.set(...o.position);if(k==='size'){o.size=o.size.map(x=>Math.max(.1,x));o.mesh.scale.set(...o.size)}if(k==='rotation')o.mesh.rotation.set(...o.rotation);persist()})}
+function persist(){try{localStorage.setItem(KEY,JSON.stringify({projectName:$('projectName').value,objects:objects.map(o=>({id:o.id,name:o.name,type:o.type,position:o.mesh.position.toArray(),rotation:[o.mesh.rotation.x,o.mesh.rotation.y,o.mesh.rotation.z],size:o.mesh.scale.toArray(),color:o.color})),nextId,selectedId}))}catch(e){}}
+function load(d){objects.forEach(o=>scene.remove(o.mesh));objects=[];selectedId=null;nextId=1;(d.objects||[]).forEach(x=>{let o=make(x.type||'Part',x.name||'Part',x.position||[0,.5,0],x.color||'#4ea8de',x.size||[2,1,2],x.id);o.rotation=x.rotation||[0,0,0];o.mesh.rotation.set(...o.rotation);nextId=Math.max(nextId,o.id+1)});$('projectName').value=d.projectName||'Yeni Roblox Oyunum';selectedId=d.selectedId&&objects.some(o=>o.id===d.selectedId)?d.selectedId:(objects[0]?.id??null);sync();persist()}
+function down(e){orbit.down=true;orbit.x=e.clientX;orbit.y=e.clientY;touchStart={x:e.clientX,y:e.clientY,moved:false};if($('view').setPointerCapture)$('view').setPointerCapture(e.pointerId)}
+function move(e){if(!orbit.down)return;let dx=e.clientX-orbit.x,dy=e.clientY-orbit.y;if(Math.abs(dx)+Math.abs(dy)>4)touchStart.moved=true;if(touchStart.moved){orbit.rotY-=dx*.008;orbit.rotX=Math.max(-1.2,Math.min(1.2,orbit.rotX+dy*.008));cam()}orbit.x=e.clientX;orbit.y=e.clientY}
+function up(e){if(!orbit.down)return;orbit.down=false;if(touchStart&&!touchStart.moved&&renderer){let r=$('view').getBoundingClientRect();mouse.x=(e.clientX-r.left)/r.width*2-1;mouse.y=-(e.clientY-r.top)/r.height*2+1;raycaster.setFromCamera(mouse,camera);let hits=raycaster.intersectObjects(objects.map(o=>o.mesh));selectedId=hits.length?hits[0].object.userData.objectId:null;sync()}touchStart=null}
+function del(){let o=chosen();if(!o){notify('Önce nesne seç');return}scene.remove(o.mesh);objects=objects.filter(x=>x.id!==o.id);selectedId=objects.at(-1)?.id??null;sync();persist();notify('Nesne silindi')}
+function exportFile(){let data={format:'StudioLite2Prototype',version:1,projectName:$('projectName').value,objects:objects.map(o=>({name:o.name,type:o.type,position:o.mesh.position.toArray(),rotation:o.mesh.rotation.toArray().slice(0,3),size:o.mesh.scale.toArray(),color:o.color}))};let a=document.createElement('a'),url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));a.href=url;a.download=($('projectName').value||'studio-lite-project').replace(/[^a-z0-9-_]/gi,'_')+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);notify('JSON taslağı indirildi')}
+$('addCube').onclick=()=>{make('Part','Part',[Math.random()*2-1,.5,Math.random()*2-1]);notify('Part eklendi')};$('addSide').onclick=$('addCube').onclick;$('addSphere').onclick=()=>{make('Sphere','Sphere',[0,.5,0],'#a58bff',[1.5,1.5,1.5]);notify('Sphere eklendi')};$('addFloor').onclick=()=>{make('Part','Zemin',[0,-.55,0],'#38536b',[12,.2,12]);notify('Zemin eklendi')};$('deleteBtn').onclick=del;$('saveBtn').onclick=()=>{persist();notify('Bu cihazın tarayıcısına kaydedildi ✓')};$('exportBtn').onclick=exportFile;$('projectName').onchange=persist;
+$('newBtn').onclick=()=>{if(confirm('Yeni boş sahne oluşturulsun mu? Önce dışa aktarmadıysan mevcut taslağın üzerine yazılır.')){objects.forEach(o=>scene&&scene.remove(o.mesh));objects=[];selectedId=null;$('projectName').value='Yeni Roblox Oyunum';sync();persist();notify('Yeni sahne hazır')}};
+[['selectTool','Seç'],['moveTool','Taşı'],['rotateTool','Döndür'],['scaleTool','Boyut']].forEach(([id,label])=>$(id).onclick=()=>{document.querySelectorAll('.tools button').forEach(b=>b.classList.remove('active'));$(id).classList.add('active');notify(label+' aracı seçildi. Konum/dönüş/boyutu Properties bölümünden değiştir.')});
+$('tabScene').onclick=()=>{ $('workspace').className='workspace';document.querySelectorAll('.mobiletabs button').forEach(b=>b.classList.remove('active'));$('tabScene').classList.add('active')};$('tabExplorer').onclick=()=>{ $('workspace').className='workspace show-explorer';document.querySelectorAll('.mobiletabs button').forEach(b=>b.classList.remove('active'));$('tabExplorer').classList.add('active')};$('tabProps').onclick=()=>{ $('workspace').className='workspace show-properties';document.querySelectorAll('.mobiletabs button').forEach(b=>b.classList.remove('active'));$('tabProps').classList.add('active')};
+init();try{let d=JSON.parse(localStorage.getItem(KEY));if(d)load(d);else{make('Part','Başlangıç Partı',[0,.5,0]);make('Part','Zemin',[0,-.55,0],'#38536b',[12,.2,12]);selectedId=objects[0].id;sync()}}catch(e){if(scene){make('Part','Başlangıç Partı');sync()}}
+window.addEventListener('beforeunload',persist);
+})();
 </script>
-</body>
-</html>
+</body></html>
